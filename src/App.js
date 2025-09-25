@@ -1,11 +1,25 @@
 
+import { Routes, Route } from 'react-router-dom';
+import TableForm from './components/features/TableForm';
+import Home from './components/pages/Home';
+import Container from 'react-bootstrap/Container';
+import Header from './components/views/Header/Header';
+import Footer from './components/views/Footer/Footer';
 
-function App() {
+const App = () => {
   return (
     <div className="App">
-      <h1>Welcome to the Waiter App</h1>
+      <Header />
+      <Container>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/table/:id" element={<TableForm />} />
+        </Routes>
+      </Container>
+      <Footer />
     </div>
   );
 }
+
 
 export default App;
