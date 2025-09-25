@@ -12,9 +12,6 @@ function Table() {
     const fetchTableData = async () => {
       try {
         setLoading(true);
-        // Tu możesz wywołać API z parametrem id
-        // const response = await fetch(`/api/tables/${id}`);
-        // const data = await response.json();
         
         // Symulacja danych
         const mockData = {
