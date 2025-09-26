@@ -4,7 +4,6 @@ import { getAllTables, loadTablesRequest } from '../../Redux/tabelsRedux';
 import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
 import ListGroup from 'react-bootstrap/ListGroup';
-import Spinner from 'react-bootstrap/Spinner';
 import { Link } from 'react-router-dom';
 
 function Home() {
