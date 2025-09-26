@@ -1,6 +1,6 @@
 
 import { Routes, Route } from 'react-router-dom';
-import TableForm from './components/features/TableForm';
+import Table from './components/pages/Table';
 import Home from './components/pages/Home';
 import Container from 'react-bootstrap/Container';
 import Header from './components/views/Header/Header';
@@ -14,7 +14,7 @@ const App = () => {
       <Container>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/table/:id" element={<TableForm />} />
+          <Route path="/table/:id" element={<Table />} />
           <Route path="*" element={<NotFound />} /> {/* 404 route */}
         </Routes>
       </Container>

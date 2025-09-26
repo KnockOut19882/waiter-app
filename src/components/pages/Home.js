@@ -1,17 +1,19 @@
+import React, { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { getAllTables, loadTablesRequest } from '../../Redux/tabelsRedux';
 import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
 import ListGroup from 'react-bootstrap/ListGroup';
+import Spinner from 'react-bootstrap/Spinner';
 import { Link } from 'react-router-dom';
 
 function Home() {
-  const tables = [
-    { id: '1', name: 'Table 1', status: 'available' },
-    { id: '2', name: 'Table 2', status: 'occupied' },
-    { id: '3', name: 'Table 3', status: 'reserved' },
-    { id: '4', name: 'Table 4', status: 'cleaning' },
-    { id: '5', name: 'Table 5', status: 'occupied' },
-    { id: 'vip', name: 'Table VIP', status: 'available' }
-  ];
+  const dispatch = useDispatch();
+  const tables = useSelector(getAllTables);
+
+  useEffect(() => {
+    dispatch(loadTablesRequest());
+  }, [dispatch]);
 
   return (
     <Container className="mt-4">
