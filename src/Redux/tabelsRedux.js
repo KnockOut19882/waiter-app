@@ -1,3 +1,5 @@
+import { API_URL } from '../config';
+
 //selectors
 export const getAllTables = (state) => state.tables;
 export const getTableById = (state, id) => state.tables.find(table => table.id === id);
@@ -15,7 +17,7 @@ export const updateTable = payload => ({ type: UPDATE_TABLE, payload });
 export const loadTablesRequest = () => {
   return async dispatch => {
     try {
-      const response = await fetch('http://localhost:3131/tables');
+      const response = await fetch(`${API_URL}/tables`);
       if (response.ok) {
         const data = await response.json();
         // Map API field names to component field names
@@ -48,7 +50,7 @@ export const updateTableRequest = (tableData) => {
         name: undefined
       };
 
-      const response = await fetch(`http://localhost:3131/tables/${tableData.id}`, {
+      const response = await fetch(`${API_URL}/tables/${tableData.id}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
