@@ -5,6 +5,7 @@ import Home from './components/pages/Home';
 import Container from 'react-bootstrap/Container';
 import Header from './components/views/Header/Header';
 import Footer from './components/views/Footer/Footer';
+import NotFound from './components/views/NotFound/NotFound';
 
 const App = () => {
   return (
@@ -14,6 +15,7 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/table/:id" element={<TableForm />} />
+          <Route path="*" element={<NotFound />} /> {/* 404 route */}
         </Routes>
       </Container>
       <Footer />
