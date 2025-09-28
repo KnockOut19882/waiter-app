@@ -1,4 +1,4 @@
-run = "npm run start:simple"
+run = "npm start"
 language = "nodejs"
 
 [env]
