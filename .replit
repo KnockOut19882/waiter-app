@@ -1,0 +1,9 @@
+run = "npm run start:simple"
+language = "nodejs"
+
+[env]
+HOST = "0.0.0.0"
+PORT = "3000"
+
+[deployment]
+deploymentTarget = "cloudrun"
